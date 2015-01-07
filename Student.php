@@ -35,7 +35,21 @@ class Student
 	function toString()
 	{
 		$result = '<b>' . $this->firstName . ' ' . $this->surname . "</b>";
-		$result .= ' (' . $this->average() . ")\n";
+		$result .= ' (';
+		if($this->average() == 100)
+		{
+			$result .= "<span style='color: blue'>";
+		}
+		elseif($this->average() < 50)
+		{
+			$result .= "<span style='color: red'>";
+		}
+		else
+		{
+			$result .= "<span style='color: green'>";
+		}
+		
+		$result .= $this->average() . '</span>' . ")\n";
 		
 		foreach( $this->emails as $which=>$what)
 		{

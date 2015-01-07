@@ -44,12 +44,46 @@
 		$third->add_grade(100);
 		$students['m789'] = $third;
 		
+		// add fourth student
+		$fourth = new Student();
+		$fourth->surname = "Bowie";
+		$fourth->firstName = "David";
+		$fourth->add_email('work', 'ziggy@stardust.com');
+		$fourth->add_grade(45);
+		$fourth->add_grade(45);
+		$fourth->add_grade(45);
+		$students['d000'] = $fourth;
+		
+		// add fifth student
+		$fifth = new Student();
+		$fifth->surname = "Lennon";
+		$fifth->firstName = "John";
+		$fifth->add_email('work', 'jl@imagine.com');
+		$fifth->add_grade(70);
+		$fifth->add_grade(70);
+		$fifth->add_grade(70);
+		$students['j999'] = $fifth;
+		
+		// add sixth student
+		$sixth = new Student();
+		$sixth->surname = "The Alien";
+		$sixth->firstName = "Ziltoid";
+		$sixth->add_email('work', 'ziltoid@ziltoid.com');
+		$sixth->add_grade(10);
+		$sixth->add_grade(20);
+		$sixth->add_grade(30);
+		$students['z999'] = $sixth;
+		
 		ksort($students);
+		
+		echo "<h1>Students</h1><div style='margin: 40px'>";
 		
 		foreach( $students as $student )
 		{
 			echo $student->toString();
 		}
+		
+		echo "</div>";
 		
 		?>
 	</body>
